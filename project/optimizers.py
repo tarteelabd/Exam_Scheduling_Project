@@ -50,6 +50,25 @@ def solve(case, method, seed):
             population = next_generation
             costs = [evaluate(order) for order in population]
             history.append(best_count)
+    elif method == 'PSO':
+        positions = nrng.random((population_size, n))
+        positions[0, initial] = np.arange(n) / n
+        velocities = nrng.uniform(-.1, .1, positions.shape)
+        decode = lambda row: np.argsort(row, kind='stable').tolist()
+        costs = np.array([evaluate(decode(row)) for row in positions])
+        personal, personal_cost = positions.copy(), costs.copy()
+        global_position = personal[int(np.argmin(personal_cost))].copy()
+        history.append(best_count)
+        for _ in range(SETTINGS['iterations']):
+            velocities = (.65 * velocities + 1.5 * nrng.random(positions.shape) * (personal - positions)
+                          + 1.5 * nrng.random(positions.shape) * (global_position - positions))
+            velocities = np.clip(velocities, -.4, .4)
+            positions = np.clip(positions + velocities, -2, 2)
+            costs = np.array([evaluate(decode(row)) for row in positions])
+            improved = costs < personal_cost
+            personal[improved], personal_cost[improved] = positions[improved], costs[improved]
+            global_position = personal[int(np.argmin(personal_cost))].copy()
+            history.append(best_count)
     else:
         raise ValueError('Unknown method')
     assert evaluations == population_size * (SETTINGS['iterations'] + 1)
