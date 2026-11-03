@@ -69,6 +69,25 @@ def solve(case, method, seed):
             personal[improved], personal_cost[improved] = positions[improved], costs[improved]
             global_position = personal[int(np.argmin(personal_cost))].copy()
             history.append(best_count)
+    elif method == 'ACO':
+        pheromone = [[1.] * n for _ in range(n)]
+        importance = [1 + len(adj[v]) for v in range(n)]
+        for iteration in range(SETTINGS['iterations'] + 1):
+            for ant in range(population_size):
+                if iteration == 0 and ant == 0:
+                    order = initial.copy()
+                else:
+                    remaining, order = list(range(n)), []
+                    for position in range(n):
+                        weights = [pheromone[position][v] * importance[v] for v in remaining]
+                        v = rng.choices(remaining, weights=weights, k=1)[0]
+                        order.append(v); remaining.remove(v)
+                evaluate(order)
+            for row in pheromone:
+                for v in range(n):row[v] = max(.01, row[v] * .75)
+            for position, v in enumerate(best_order):
+                pheromone[position][v] = min(10., pheromone[position][v] + 1 / best_count)
+            history.append(best_count)
     else:
         raise ValueError('Unknown method')
     assert evaluations == population_size * (SETTINGS['iterations'] + 1)
