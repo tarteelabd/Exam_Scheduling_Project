@@ -18,9 +18,9 @@ Exam scheduling as graph coloring: assign each exam a period so that students ne
 | ربا صقر | [ruba-saqr](https://github.com/ruba-saqr) | خوارزمية PSO | [#3](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/3) |
 | محمد الجاويش | [algawishmohamed757-svg](https://github.com/algawishmohamed757-svg) | خوارزمية ACO | [#4](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/4) |
 | ايناس رحال | [einasryd](https://github.com/einasryd) | منصة التجارب والنتائج | [#5](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/5) |
-| هدى فوال | [HudaFawal](https://github.com/HudaFawal) | التحقق من القيود والحلول، والتقرير النهائي | [#6](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/6) |
+| هدى فوّال | [HudaFawal](https://github.com/HudaFawal) | التحقق من القيود والحلول | [#6](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/6) |
 | راما بعيون | [ramaBayon](https://github.com/ramaBayon) | مخرجات التجارب ولوحة العرض | [#7](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/7) |
-| abdalwadood867-glitch | [abdalwadood867-glitch](https://github.com/abdalwadood867-glitch) | كتابة التقرير النهائي وتوثيق مهام الأعضاء | [#8](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/8) |
+| عبدالودود عقيل | [abdalwadood867-glitch](https://github.com/abdalwadood867-glitch) | كتابة التقرير النهائي وتوثيق مهام الأعضاء | [#8](https://github.com/tarteelabd/Exam_Scheduling_Project/issues/8) |
 
 مساهمة كل عضو موثّقة في التقرير (`Report.docx`) وفي تاريخ المستودع. الفريق تسعة أعضاء (ضمن شرط المقرر: 6 إلى 9).
 
